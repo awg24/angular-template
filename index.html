@@ -1,23 +1,57 @@
 <!DOCTYPE html>
-<html ng-app="basic">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <div ng-controller="BasicCtrl">
+<html ng-app="assignment">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="styles/styles.css">
+	</head>
+	<body>
+		<div ng-controller="loadingButton">
+			<button ng-click="buttonClicked()" ng-bind="innerText">{{ innerText }}</button>
+			
+			<nav>
+				<div class="give-border give-left-border">
+					<a href="#" ng-click="tab='green'">Green</a>
+				</div>
+				<div class="give-border">
+					<a href="#" ng-click="tab='red'">Red</a>
+				</div>
+				<div class="give-border">
+					<a href="#" ng-click="tab='blue'">Blue</a>
+				</div>
+				<div class="give-border">
+					<a href="#" ng-click="tab='yellow'">Yellow</a>
+				</div>
+			</nav>
+
+			<div ng-show="tab == 'green'">Im green!</div>
+			<div ng-show="tab == 'red'">Im red!</div>
+			<div ng-show="tab == 'blue'">Im blue!</div>
+			<div ng-show="tab == 'yellow'">Im yellow!</div>
+			<button ng-click="liked()" ng-bind="buttonLikes">{{ buttonLikes }}</button>
+		</div>
+		 <div ng-controller="greetings">
 			<input type="text" ng-model="name">
-			<div ng-bind="name"></div>
-			<div>Hello, {{ name }}</div>
-			<div ng-bind="myModel"></div>
+			<div ng-bind="greeting">{{ greeting }}</div>
+            <button ng-click="logClick()">Submit</button>
 		</div>
 
-        <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-        <script type="text/javascript" src="scripts/services.js"></script>
-        <script type="text/javascript" src="scripts/controllers.js"></script>
-        <script type="text/javascript" src="scripts/app.js"></script>
-    </body>
+		<div ng-controller="loginForm">
+			<form ng-submit="goLogin()">
+			Username: <input type="text" ng-model="username">
+			Password: <input type="password" ng-model="password">
+			<button>Login</button>
+			<div ng-bind="error">{{error}}</div>
+			</form>
+		</div>
+
+
+		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+		<script type="text/javascript" src="scripts/services.js"></script>
+		<script type="text/javascript" src="scripts/controllers.js"></script>
+		<script type="text/javascript" src="scripts/app.js"></script>
+	</body>
 </html>

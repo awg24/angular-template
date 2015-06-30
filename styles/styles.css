@@ -1,0 +1,14 @@
+.give-border {
+	padding: 10px;
+	text-align: center;
+	width: 50px;
+	display: inline-block;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+	margin-right: -5px;
+	text-decoration: none;
+}
+.give-left-border {
+	border-left: 1px solid black;
+}
